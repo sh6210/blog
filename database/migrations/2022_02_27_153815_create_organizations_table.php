@@ -15,6 +15,15 @@ class CreateOrganizationsTable extends Migration
     {
         Schema::create('organizations', function (Blueprint $table) {
             $table->id();
+            $table->string('status')->nullable();
+            $table->string('name')->nullable();
+            $table->boolean('is_at_home')->default(0);
+            $table->string('logo')->nullable();
+            $table->string('excerpt')->nullable();
+            $table->string('description')->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('website')->unique()->nullable();
+            $table->jsonb('social')->nullable();
             $table->timestamps();
         });
     }

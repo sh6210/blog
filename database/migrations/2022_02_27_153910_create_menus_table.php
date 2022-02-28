@@ -15,6 +15,16 @@ class CreateMenusTable extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
+            $table->string('status')->nullable();
+            $table->foreignId('parent_menu_id')->nullable()->constrained('menus')->cascadeOnDelete();
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->string('url')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('play_list_link')->nullable();
+            $table->string('icon')->nullable();
+            $table->smallInteger('order');
+            $table->string('published_at')->nullable();
             $table->timestamps();
         });
     }

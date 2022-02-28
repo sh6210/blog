@@ -15,6 +15,9 @@ class CreateDonationsTable extends Migration
     {
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
+            $table->string('status')->nullable();
+            $table->jsonb('accounts')->nullable();
+            $table->jsonb('mobile_banking')->nullable();
             $table->timestamps();
         });
     }
