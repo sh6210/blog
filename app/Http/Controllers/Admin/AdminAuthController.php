@@ -30,14 +30,10 @@ class AdminAuthController extends Controller
             'password' => 'required',
         ]);
 
-        if (adminAuth()->attempt(['email' => $request->input('email'), 'password' => env('APP_SALT') . $request->input('password')])) {
-
-            if (!in_array(adminUser()->type, ProjectConstants::$adminLoginUserTypes)){
-                adminAuth()->logout();
-                Session::flash('error', 'Sorry, you\'re not welcome here');
-                return back();
-            }
-
+        if (adminAuth()->attempt([
+            'email' => $request->input('email'),
+            'password' => env('APP_SALT') . $request->input('password')
+        ])) {
             Session::flash('success', 'Login successful!!');
 
             return redirect()->route('admin.dashboard');

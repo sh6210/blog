@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreEditorRequest;
-use App\Http\Requests\UpdateEditorRequest;
-use App\Models\Editor;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreTagRequest;
+use App\Http\Requests\UpdateTagRequest;
+use App\Models\Tag;
 
-class EditorController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class EditorController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreEditorRequest  $request
+     * @param  \App\Http\Requests\StoreTagRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEditorRequest $request)
+    public function store(StoreTagRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class EditorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Editor  $editor
+     * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function show(Editor $editor)
+    public function show(Tag $tag)
     {
         //
     }
@@ -53,10 +54,10 @@ class EditorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Editor  $editor
+     * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function edit(Editor $editor)
+    public function edit(Tag $tag)
     {
         //
     }
@@ -64,11 +65,11 @@ class EditorController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateEditorRequest  $request
-     * @param  \App\Models\Editor  $editor
+     * @param  \App\Http\Requests\UpdateTagRequest  $request
+     * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEditorRequest $request, Editor $editor)
+    public function update(UpdateTagRequest $request, Tag $tag)
     {
         //
     }
@@ -76,10 +77,10 @@ class EditorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Editor  $editor
+     * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Editor $editor)
+    public function destroy(Tag $tag)
     {
         //
     }

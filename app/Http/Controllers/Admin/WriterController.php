@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreBannerRequest;
-use App\Http\Requests\UpdateBannerRequest;
-use App\Models\Banner;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreWriterRequest;
+use App\Http\Requests\UpdateWriterRequest;
+use App\Models\Writer;
 
-class BannerController extends Controller
+class WriterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class BannerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBannerRequest  $request
+     * @param  \App\Http\Requests\StoreWriterRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBannerRequest $request)
+    public function store(StoreWriterRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class BannerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Banner  $banner
+     * @param  \App\Models\Writer  $writer
      * @return \Illuminate\Http\Response
      */
-    public function show(Banner $banner)
+    public function show(Writer $writer)
     {
         //
     }
@@ -53,10 +54,10 @@ class BannerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Banner  $banner
+     * @param  \App\Models\Writer  $writer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Banner $banner)
+    public function edit(Writer $writer)
     {
         //
     }
@@ -64,11 +65,11 @@ class BannerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBannerRequest  $request
-     * @param  \App\Models\Banner  $banner
+     * @param  \App\Http\Requests\UpdateWriterRequest  $request
+     * @param  \App\Models\Writer  $writer
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBannerRequest $request, Banner $banner)
+    public function update(UpdateWriterRequest $request, Writer $writer)
     {
         //
     }
@@ -76,10 +77,10 @@ class BannerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Banner  $banner
+     * @param  \App\Models\Writer  $writer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Banner $banner)
+    public function destroy(Writer $writer)
     {
         //
     }

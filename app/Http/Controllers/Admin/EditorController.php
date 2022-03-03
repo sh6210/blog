@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreCommentRequest;
-use App\Http\Requests\UpdateCommentRequest;
-use App\Models\Comment;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreEditorRequest;
+use App\Http\Requests\UpdateEditorRequest;
+use App\Models\Editor;
 
-class CommentController extends Controller
+class EditorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCommentRequest  $request
+     * @param  \App\Http\Requests\StoreEditorRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCommentRequest $request)
+    public function store(StoreEditorRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class CommentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  \App\Models\Editor  $editor
      * @return \Illuminate\Http\Response
      */
-    public function show(Comment $comment)
+    public function show(Editor $editor)
     {
         //
     }
@@ -53,10 +54,10 @@ class CommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  \App\Models\Editor  $editor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comment $comment)
+    public function edit(Editor $editor)
     {
         //
     }
@@ -64,11 +65,11 @@ class CommentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCommentRequest  $request
-     * @param  \App\Models\Comment  $comment
+     * @param  \App\Http\Requests\UpdateEditorRequest  $request
+     * @param  \App\Models\Editor  $editor
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCommentRequest $request, Comment $comment)
+    public function update(UpdateEditorRequest $request, Editor $editor)
     {
         //
     }
@@ -76,10 +77,10 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  \App\Models\Editor  $editor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy(Editor $editor)
     {
         //
     }

@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreDonationRequest;
-use App\Http\Requests\UpdateDonationRequest;
-use App\Models\Donation;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreMenuRequest;
+use App\Http\Requests\UpdateMenuRequest;
+use App\Models\Menu;
 
-class DonationController extends Controller
+class MenuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class DonationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreDonationRequest  $request
+     * @param  \App\Http\Requests\StoreMenuRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDonationRequest $request)
+    public function store(StoreMenuRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class DonationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Donation  $donation
+     * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function show(Donation $donation)
+    public function show(Menu $menu)
     {
         //
     }
@@ -53,10 +54,10 @@ class DonationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Donation  $donation
+     * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function edit(Donation $donation)
+    public function edit(Menu $menu)
     {
         //
     }
@@ -64,11 +65,11 @@ class DonationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateDonationRequest  $request
-     * @param  \App\Models\Donation  $donation
+     * @param  \App\Http\Requests\UpdateMenuRequest  $request
+     * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDonationRequest $request, Donation $donation)
+    public function update(UpdateMenuRequest $request, Menu $menu)
     {
         //
     }
@@ -76,10 +77,10 @@ class DonationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Donation  $donation
+     * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Donation $donation)
+    public function destroy(Menu $menu)
     {
         //
     }

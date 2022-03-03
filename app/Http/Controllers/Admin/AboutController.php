@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StorePublisherRequest;
-use App\Http\Requests\UpdatePublisherRequest;
-use App\Models\Publisher;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreAboutRequest;
+use App\Http\Requests\UpdateAboutRequest;
+use App\Models\About;
 
-class PublisherController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class PublisherController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePublisherRequest  $request
+     * @param  \App\Http\Requests\StoreAboutRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePublisherRequest $request)
+    public function store(StoreAboutRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class PublisherController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Publisher  $publisher
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function show(Publisher $publisher)
+    public function show(About $about)
     {
         //
     }
@@ -53,10 +54,10 @@ class PublisherController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Publisher  $publisher
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publisher $publisher)
+    public function edit(About $about)
     {
         //
     }
@@ -64,11 +65,11 @@ class PublisherController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePublisherRequest  $request
-     * @param  \App\Models\Publisher  $publisher
+     * @param  \App\Http\Requests\UpdateAboutRequest  $request
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePublisherRequest $request, Publisher $publisher)
+    public function update(UpdateAboutRequest $request, About $about)
     {
         //
     }
@@ -76,10 +77,10 @@ class PublisherController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Publisher  $publisher
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publisher $publisher)
+    public function destroy(About $about)
     {
         //
     }

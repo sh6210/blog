@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreBookRequest;
-use App\Http\Requests\UpdateBookRequest;
-use App\Models\Book;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreGeneralInfoRequest;
+use App\Http\Requests\UpdateGeneralInfoRequest;
+use App\Models\GeneralInfo;
 
-class BookController extends Controller
+class GeneralInfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class BookController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBookRequest  $request
+     * @param  \App\Http\Requests\StoreGeneralInfoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBookRequest $request)
+    public function store(StoreGeneralInfoRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Book  $book
+     * @param  \App\Models\GeneralInfo  $generalInfo
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show(GeneralInfo $generalInfo)
     {
         //
     }
@@ -53,10 +54,10 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Book  $book
+     * @param  \App\Models\GeneralInfo  $generalInfo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit(GeneralInfo $generalInfo)
     {
         //
     }
@@ -64,11 +65,11 @@ class BookController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBookRequest  $request
-     * @param  \App\Models\Book  $book
+     * @param  \App\Http\Requests\UpdateGeneralInfoRequest  $request
+     * @param  \App\Models\GeneralInfo  $generalInfo
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBookRequest $request, Book $book)
+    public function update(UpdateGeneralInfoRequest $request, GeneralInfo $generalInfo)
     {
         //
     }
@@ -76,10 +77,10 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Book  $book
+     * @param  \App\Models\GeneralInfo  $generalInfo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy(GeneralInfo $generalInfo)
     {
         //
     }

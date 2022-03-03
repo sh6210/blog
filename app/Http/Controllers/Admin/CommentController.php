@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreTagRequest;
-use App\Http\Requests\UpdateTagRequest;
-use App\Models\Tag;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCommentRequest;
+use App\Http\Requests\UpdateCommentRequest;
+use App\Models\Comment;
 
-class TagController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class TagController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTagRequest  $request
+     * @param  \App\Http\Requests\StoreCommentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTagRequest $request)
+    public function store(StoreCommentRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class TagController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(Tag $tag)
+    public function show(Comment $comment)
     {
         //
     }
@@ -53,10 +54,10 @@ class TagController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tag $tag)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -64,11 +65,11 @@ class TagController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateTagRequest  $request
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Http\Requests\UpdateCommentRequest  $request
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTagRequest $request, Tag $tag)
+    public function update(UpdateCommentRequest $request, Comment $comment)
     {
         //
     }
@@ -76,10 +77,10 @@ class TagController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tag $tag)
+    public function destroy(Comment $comment)
     {
         //
     }

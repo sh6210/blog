@@ -21,16 +21,16 @@
                 <li class="nav-item {{--menu-open--}}">
                     <a href="#" class="nav-link {{--active--}}">
                         <i class="nav-icon fas fa-book"></i>
-                        <p>User<i class="fas fa-angle-left right"></i></p>
+                        <p>Categories<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('user.index')}}" class="nav-link {{--active--}}">
+                            <a href="{{route('category.index')}}" class="nav-link {{--active--}}">
                                 <i class="far fa-circle nav-icon"></i><p>List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('user.create')}}" class="nav-link">
+                            <a href="{{route('category.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i><p>Create</p>
                             </a>
                         </li>
@@ -39,16 +39,16 @@
                 <li class="nav-item {{--menu-open--}}">
                     <a href="#" class="nav-link {{--active--}}">
                         <i class="nav-icon fas fa-book"></i>
-                        <p>Student<i class="fas fa-angle-left right"></i></p>
+                        <p>Authors<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('student.index')}}" class="nav-link {{--active--}}">
+                            <a href="{{route('author.index')}}" class="nav-link {{--active--}}">
                                 <i class="far fa-circle nav-icon"></i><p>List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('student.create')}}" class="nav-link">
+                            <a href="{{route('author.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i><p>Create</p>
                             </a>
                         </li>
@@ -57,16 +57,16 @@
                 <li class="nav-item {{--menu-open--}}">
                     <a href="#" class="nav-link {{--active--}}">
                         <i class="nav-icon fas fa-book"></i>
-                        <p>School<i class="fas fa-angle-left right"></i></p>
+                        <p>Posts<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('school.index')}}" class="nav-link {{--active--}}">
+                            <a href="{{route('post.index')}}" class="nav-link {{--active--}}">
                                 <i class="far fa-circle nav-icon"></i><p>List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('school.create')}}" class="nav-link">
+                            <a href="{{route('post.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i><p>Create</p>
                             </a>
                         </li>

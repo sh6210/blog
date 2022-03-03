@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreFooterRequest;
-use App\Http\Requests\UpdateFooterRequest;
-use App\Models\Footer;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreDonationRequest;
+use App\Http\Requests\UpdateDonationRequest;
+use App\Models\Donation;
 
-class FooterController extends Controller
+class DonationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class FooterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreFooterRequest  $request
+     * @param  \App\Http\Requests\StoreDonationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFooterRequest $request)
+    public function store(StoreDonationRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class FooterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Donation  $donation
      * @return \Illuminate\Http\Response
      */
-    public function show(Footer $footer)
+    public function show(Donation $donation)
     {
         //
     }
@@ -53,10 +54,10 @@ class FooterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Donation  $donation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Footer $footer)
+    public function edit(Donation $donation)
     {
         //
     }
@@ -64,11 +65,11 @@ class FooterController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateFooterRequest  $request
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Http\Requests\UpdateDonationRequest  $request
+     * @param  \App\Models\Donation  $donation
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateFooterRequest $request, Footer $footer)
+    public function update(UpdateDonationRequest $request, Donation $donation)
     {
         //
     }
@@ -76,10 +77,10 @@ class FooterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Donation  $donation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Footer $footer)
+    public function destroy(Donation $donation)
     {
         //
     }

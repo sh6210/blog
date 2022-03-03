@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreWriterRequest;
-use App\Http\Requests\UpdateWriterRequest;
-use App\Models\Writer;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBookRequest;
+use App\Http\Requests\UpdateBookRequest;
+use App\Models\Book;
 
-class WriterController extends Controller
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class WriterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreWriterRequest  $request
+     * @param  \App\Http\Requests\StoreBookRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreWriterRequest $request)
+    public function store(StoreBookRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class WriterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Writer  $writer
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Writer $writer)
+    public function show(Book $book)
     {
         //
     }
@@ -53,10 +54,10 @@ class WriterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Writer  $writer
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function edit(Writer $writer)
+    public function edit(Book $book)
     {
         //
     }
@@ -64,11 +65,11 @@ class WriterController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateWriterRequest  $request
-     * @param  \App\Models\Writer  $writer
+     * @param  \App\Http\Requests\UpdateBookRequest  $request
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWriterRequest $request, Writer $writer)
+    public function update(UpdateBookRequest $request, Book $book)
     {
         //
     }
@@ -76,10 +77,10 @@ class WriterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Writer  $writer
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Writer $writer)
+    public function destroy(Book $book)
     {
         //
     }
