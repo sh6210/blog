@@ -3,7 +3,7 @@
         <h3 class="card-title">{{$title}}</h3>
     </div>
     <div style="width: 100px; position: absolute; right: 10px; top: 10px">
-        <a href="{{$newEntryLink}}" type="button" class="btn btn-block bg-gradient-primary btn-lg">Add</a>
+        <a href="{{$newEntryLink}}" type="button"><i class="fa fa-plus" style="color: green; position: absolute; right: 20px"></i></a>
     </div>
 
     <!-- /.card-header -->

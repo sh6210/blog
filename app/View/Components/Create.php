@@ -11,16 +11,18 @@ class Create extends Component
 {
     public string $title;
     public string $action;
+    public string $indexPageLink;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title, $action)
+    public function __construct($title, $action, $indexPageLink)
     {
         $this->title = $title;
         $this->action = $action;
+        $this->indexPageLink = $indexPageLink;
     }
 
     /**

@@ -19,7 +19,7 @@ class RecordList extends Component
      *
      * @return void
      */
-    public function __construct($title, $newEntryLink, $records)
+    public function __construct($records, $title, $newEntryLink)
     {
         $this->title = $title;
         $this->newEntryLink = $newEntryLink;
