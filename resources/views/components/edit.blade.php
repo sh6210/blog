@@ -2,7 +2,7 @@
     <div class="col-md-6">
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">{{$title}}</h3>
+                <h3 class="card-title">{{$title}} <a href="{{$indexPageLink}}"><i class="fa fa-list" style="color: white; position: absolute; right: 20px"></i></a></h3>
             </div>
             <form method="post" action="{{$action}}">
                 @csrf @method('put')
