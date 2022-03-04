@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ env('APP_NAME') }}</title>
+    <title>@yield('title', env('APP_NAME'))</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -36,8 +36,8 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         @include('elements.alerts.flash')
-        @include('elements.errors')
-        @yield('each-page-top-section')
+{{--        @include('elements.errors')--}}
+        @yield('each-page-title')
 
         <!-- Main content -->
         <div class="content">
@@ -75,12 +75,7 @@
 <!-- AdminLTE -->
 <script src="{{ asset('admin-panel/dist/js/adminlte.js') }}"></script>
 
-<!-- OPTIONAL SCRIPTS -->
-<script src="{{ asset('admin-panel/plugins/chart.js/Chart.min.js') }}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('admin-panel/dist/js/demo.js') }}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('admin-panel/dist/js/pages/dashboard3.js') }}"></script>
+@yield('bottomJs')
 @livewireScripts
 </body>
 </html>

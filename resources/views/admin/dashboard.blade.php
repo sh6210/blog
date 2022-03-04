@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('each-page-top-section')
+@section('each-page-title')
     @include('admin.partials.each-page-top-section', ['title' => 'Dashboard'])
 @endsection
 @section('content')
@@ -245,4 +245,13 @@
         </div>
         <!-- /.col-md-6 -->
     </div>
+@endsection
+
+@section('bottomJs')
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="{{ asset('admin-panel/plugins/chart.js/Chart.min.js') }}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{ asset('admin-panel/dist/js/demo.js') }}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{{ asset('admin-panel/dist/js/pages/dashboard3.js') }}"></script>
 @endsection

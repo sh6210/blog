@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
+use App\Utility\ProjectConstants;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CategoryFactory extends Factory
@@ -11,10 +13,15 @@ class CategoryFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
+        $name = $this->faker->unique()->name;
         return [
-            //
+            'status' => array_rand(ProjectConstants::$statuses),
+            'name' => $name,
+            'slug' => createSlugFrom($name),
+            'description' => $this->faker->sentence,
+            'parent_category_id' => optional(Category::inRandomOrder()->first())->id,
         ];
     }
 }

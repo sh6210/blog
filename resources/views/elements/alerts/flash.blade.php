@@ -1,9 +1,9 @@
 @inject('session', "\Illuminate\Support\Facades\Session")
-@foreach (['error', 'warning', 'success', 'info'] as $msg)
-    @if($session::has($msg))
-        <div class="alert alert-{{$msg}}">
+@foreach (['error', 'warning', 'success', 'info'] as $flashKey)
+    @if($session::has($flashKey))
+        <div class="alert alert-{{$flashKey}}">
             <span class="alert-closebtn" onclick="this.parentElement.style.display='none';" style="cursor: pointer">&times;</span>
-            <strong>{{ucfirst($msg)}}!</strong> {{$session::get($msg)}}
+            <strong>{{ucfirst($flashKey)}}!</strong> {{strlen($session::get($flashKey)) > 1 ? $session::get($flashKey) : $constants::$flashMessages[$flashKey]}}
         </div>
     @endif
 @endforeach
