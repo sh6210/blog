@@ -9,6 +9,14 @@ if (!function_exists('createSlugFrom')) {
     }
 }
 
+if (!function_exists('attachmentPath')) {
+    function attachmentPath($attachment): string
+    {
+        $path = 'storage' . DIRECTORY_SEPARATOR . $attachment;
+        return asset($path);
+    }
+}
+
 if (!function_exists('prepareInputLabel')) {
     function prepareInputLabel($str): string
     {

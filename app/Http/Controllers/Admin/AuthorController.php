@@ -3,41 +3,59 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\AuthorRequest;
+use App\Models\Author;
+use App\Services\AuthorService;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Session;
 
 class AuthorController extends Controller
 {
+    private AuthorService $service;
+
+    public function __construct(AuthorService $service)
+    {
+        $this->service = $service;
+    }
+
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return Application|Factory|View
      */
     public function index()
     {
-        //
+        return view('admin.author.index');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Application|Factory|View
      */
     public function create()
     {
-        //
+        return view("admin.author.create");
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param AuthorRequest $request
      *
-     * @return Response
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(AuthorRequest $request): RedirectResponse
     {
-        //
+        $this->service->store($request->validated());
+
+        Session::flash('success');
+
+        return redirect()->route('author.index');
     }
 
     /**
@@ -54,35 +72,49 @@ class AuthorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return Response
+     * @param Author $author
+     *
+     * @return Application|Factory|View
      */
-    public function edit($id)
+    public function edit(Author $author)
     {
-        //
+        $data = [
+            'record' => $author
+        ];
+
+        return view('admin.author.edit', $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param  int  $id
+     * @param AuthorRequest $request
+     * @param Author $author
      *
-     * @return Response
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(AuthorRequest $request, Author $author): RedirectResponse
     {
-        //
+        $this->service->update($author, $request->validated());
+
+        Session::flash('success');
+
+        return redirect()->route('author.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return Response
+     * @param Author $author
+     *
+     * @return RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Author $author): RedirectResponse
     {
-        //
+        $this->service->destroy($author);
+
+        Session::flash('success');
+
+        return redirect()->route('author.index');
     }
 }

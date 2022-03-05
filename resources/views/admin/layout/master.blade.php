@@ -77,5 +77,6 @@
 
 @yield('bottomJs')
 @livewireScripts
+@stack('bottomChildJs')
 </body>
 </html>

@@ -13,6 +13,12 @@ final class ProjectConstants
     const FLASH_WARNING = 'warning';
     const FLASH_INFO = 'info';
 
+    const PDF = 'pdf';
+    const CSV = 'csv';
+    const PNG = 'png';
+    const JPG = 'jpg';
+    const JPEG = 'jpeg';
+
     public static array $statuses = [
         self::STATUS_ACTIVE => 'Active',
         self::STATUS_INACTIVE => 'Inactive',
@@ -26,4 +32,11 @@ final class ProjectConstants
         self::FLASH_DANGER => "Something went wrong",
     ];
 
+    public static array $allowedUploadTypes = [
+//        self::PDF  => 'application/pdf',
+//        self::CSV  => 'text/csv',
+        self::PNG  => 'image/png',
+        self::JPG  => 'image/jpg',
+        self::JPEG => 'image/jpeg',
+    ];
 }
