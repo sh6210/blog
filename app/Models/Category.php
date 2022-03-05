@@ -14,4 +14,9 @@ class Category extends Model
     {
         return $this->belongsTo(Category::class, 'parent_category_id', 'id');
     }
+
+    public function chileCategory(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'id','parent_category_id');
+    }
 }

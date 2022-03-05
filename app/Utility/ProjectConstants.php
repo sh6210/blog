@@ -9,6 +9,7 @@ final class ProjectConstants
 
     const FLASH_SUCCESS = 'success';
     const FLASH_ERROR = 'error';
+    const FLASH_DANGER = 'danger';
     const FLASH_WARNING = 'warning';
     const FLASH_INFO = 'info';
 
@@ -22,6 +23,7 @@ final class ProjectConstants
         self::FLASH_WARNING => "Something went wrong",
         self::FLASH_ERROR => "Something went wrong",
         self::FLASH_INFO => "Something went wrong",
+        self::FLASH_DANGER => "Something went wrong",
     ];
 
 }

@@ -116,9 +116,12 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category): RedirectResponse
     {
-        $category->delete();
-
-        Session::flash('success');
+        if ($childCategoriesCount = $category->chileCategory()->count()) {
+            Session::flash('error', "Sorry selected category has direct $childCategoriesCount child categories");
+        } else {
+            $category->delete();
+            Session::flash('success');
+        }
 
         return redirect()->route('category.index');
     }
