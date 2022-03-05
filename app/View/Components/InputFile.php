@@ -17,10 +17,10 @@ class InputFile extends Component
      *
      * @return void
      */
-    public function __construct($name, $title)
+    public function __construct($name, $title = '')
     {
         $this->name = $name;
-        $this->title = $title;
+        $this->title = $title ?: prepareInputLabel($name);
     }
 
     /**

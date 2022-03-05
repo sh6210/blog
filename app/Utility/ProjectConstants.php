@@ -19,6 +19,14 @@ final class ProjectConstants
     const JPG = 'jpg';
     const JPEG = 'jpeg';
 
+    const YES = 'yes';
+    const NO = 'no';
+
+    public static array $yesNo = [
+        self::YES => 'Yes',
+        self::NO => 'No',
+    ];
+
     public static array $statuses = [
         self::STATUS_ACTIVE => 'Active',
         self::STATUS_INACTIVE => 'Inactive',

@@ -3,11 +3,39 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PostRequest;
+use App\Repositories\AuthorRepository;
+use App\Repositories\CategoryRepository;
+use App\Repositories\PostRepository;
+use App\Services\PostService;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
+    private PostService $service;
+    private CategoryRepository $categoryRepo;
+    private AuthorRepository $authorRepo;
+    private PostRepository $repo;
+
+    public function __construct(
+        PostService $service,
+        PostRepository $repo,
+        CategoryRepository $categoryRepository,
+        AuthorRepository $authorRepository
+    )
+    {
+        $this->service = $service;
+        $this->categoryRepo = $categoryRepository;
+        $this->authorRepo = $authorRepository;
+        $this->repo = $repo;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,29 +43,39 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.category.index');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Application|Factory|View
      */
     public function create()
     {
-        //
+        $data = [
+            'categories' => $this->categoryRepo->getCategories(['id', 'name']),
+            'authors' => $this->authorRepo->getAuthors(['id', 'name']),
+            'types' => $this->repo->getTypes(),
+        ];
+
+        return view('admin.post.create', $data);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param PostRequest $request
      *
-     * @return Response
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(PostRequest $request): RedirectResponse
     {
-        //
+        $this->service->store($request->validated());
+
+        Session::flash('success');
+
+        return redirect()->route('post.index');
     }
 
     /**

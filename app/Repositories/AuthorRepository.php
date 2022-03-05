@@ -16,4 +16,9 @@ class AuthorRepository
     {
         return $this->model::latest()->paginate($perPage);
     }
+
+    public function getAuthors(array $fields = [])
+    {
+        return count($fields) ? $this->model::select($fields)->get() : $this->model::all();
+    }
 }

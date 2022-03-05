@@ -29,7 +29,7 @@ class CreatePostsTable extends Migration
             $table->foreignIdFor(Author::class)->constrained('authors')->cascadeOnDelete();
             $table->boolean('allow_comment')->default(1);
             $table->foreignIdFor(Category::class)->constrained('categories')->cascadeOnDelete();
-            $table->string('published_at')->nullable();
+            $table->string('publish_at')->nullable();
             $table->timestamps();
         });
     }
