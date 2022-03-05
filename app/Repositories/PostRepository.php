@@ -12,8 +12,13 @@ class PostRepository
 
     protected string $model = Post::class;
 
-    public function getTypes()
+    /*public function getTypes()
     {
         return $this->model::select('id', 'type')->distinct()->get();
+    }*/
+
+    public function getListData($perPage, $search)
+    {
+        return $this->model::with('category', 'author')->latest()->paginate($perPage);
     }
 }

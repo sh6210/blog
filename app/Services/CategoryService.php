@@ -3,19 +3,16 @@
 namespace App\Services;
 
 use App\Repositories\CategoryRepository;
+use App\Traits\CommonServiceElements;
 
 class CategoryService
 {
+    use CommonServiceElements;
+
     private CategoryRepository $repo;
 
     public function __construct(CategoryRepository $repo)
     {
         $this->repo = $repo;
-    }
-
-    public function getListData($perPage = false, $search = false)
-    {
-        $perPage = $perPage ?: dataPerPage();
-        return $this->repo->getListData($perPage, $search);
     }
 }

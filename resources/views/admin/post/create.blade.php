@@ -11,7 +11,7 @@
                 <x-input-file name="featured_image"></x-input-file>
             </div>
             <div class="col-md-6">
-                <x-input-select name="type" :records="$types"></x-input-select>
+                <x-input-select name="type" :records="$constants::$postTypes"></x-input-select>
                 <x-input-select name="is_at_home" :records="$constants::$yesNo"></x-input-select>
                 <x-input-select name="is_at_slider" :records="$constants::$yesNo"></x-input-select>
                 <x-input-select name="allow_comment" :records="$constants::$yesNo"></x-input-select>

@@ -4,21 +4,18 @@ namespace App\Services;
 
 use App\Models\Author;
 use App\Repositories\AuthorRepository;
+use App\Traits\CommonServiceElements;
 use Illuminate\Support\Facades\Storage;
 
 class AuthorService
 {
+    use CommonServiceElements;
+
     private AuthorRepository $repo;
 
     public function __construct(AuthorRepository $repo)
     {
         $this->repo = $repo;
-    }
-
-    public function getListData($perPage = false, $search = false)
-    {
-        $perPage = $perPage ?: dataPerPage();
-        return $this->repo->getListData($perPage, $search);
     }
 
     public function store(array $validated)

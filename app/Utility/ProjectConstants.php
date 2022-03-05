@@ -19,8 +19,18 @@ final class ProjectConstants
     const JPG = 'jpg';
     const JPEG = 'jpeg';
 
-    const YES = 'yes';
-    const NO = 'no';
+    const YES = 1;
+    const NO = 0;
+
+    const POST_TYPE_1 = 'type_001';
+    const POST_TYPE_2 = 'type_002';
+    const POST_TYPE_3 = 'type_003';
+
+    public static array $postTypes = [
+        self::POST_TYPE_1 => 'Post Type 001',
+        self::POST_TYPE_2 => 'Post Type 002',
+        self::POST_TYPE_3 => 'Post Type 003',
+    ];
 
     public static array $yesNo = [
         self::YES => 'Yes',

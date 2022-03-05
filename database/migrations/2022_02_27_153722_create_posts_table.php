@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('status')->nullable();
             $table->string('type')->nullable();
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->nullable();
             $table->string('featured_image')->nullable();
             $table->boolean('is_at_home')->default(0);
             $table->boolean('is_at_slider')->default(0);
