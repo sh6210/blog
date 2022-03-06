@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title', 'Post')
+@section('title', 'Tag')
 @section('content')
-    <livewire:post-list/>
+    <livewire:tag-list/>
 @endsection

@@ -2,11 +2,12 @@
 
 namespace App\Repositories;
 
+use App\Interfaces\ListData;
 use App\Models\Post;
 use App\Traits\OnlyStore;
 use App\Traits\OnlyUpdate;
 
-class PostRepository
+class PostRepository implements ListData
 {
     use OnlyStore, OnlyUpdate;
 

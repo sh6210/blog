@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use App\Observers\CategoryObserver;
 use App\Observers\PostObserver;
+use App\Observers\TagObserver;
 use Illuminate\Support\ServiceProvider;
 
 class ObserverServiceProvider extends ServiceProvider
@@ -29,5 +31,6 @@ class ObserverServiceProvider extends ServiceProvider
     {
         Category::observe(CategoryObserver::class);
         Post::observe(PostObserver::class);
+        Tag::observe(TagObserver::class);
     }
 }

@@ -2,11 +2,12 @@
 
 namespace App\Repositories;
 
+use App\Interfaces\ListData;
 use App\Models\Category;
 use App\Traits\OnlyStore;
 use App\Traits\OnlyUpdate;
 
-class CategoryRepository
+class CategoryRepository implements ListData
 {
     use OnlyStore, OnlyUpdate;
 

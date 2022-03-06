@@ -1,7 +1,7 @@
 <div {{ $attributes->merge(['class' => 'form-group']) }}>
     <label>{{$label}}</label>
     <div class="wrapper_{{$name}}">
-        <select class="form-control @error($name) has-error @enderror" name="{{$name}}" id="{{$name}}" {{$required}}>
+        <select class="form-control @error($name) is-invalid @enderror" name="{{$name}}" id="{{$name}}" {{$required}}>
             <option selected disabled>{{$placeholder}}</option>
             @foreach($records as $key => $record)
                 @php($val = $record->id ?? $key)

@@ -72,6 +72,24 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item {{--menu-open--}}">
+                    <a href="#" class="nav-link {{--active--}}">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>Tag<i class="fas fa-angle-left right"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('tag.index')}}" class="nav-link {{--active--}}">
+                                <i class="far fa-circle nav-icon"></i><p>List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('tag.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i><p>Create</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

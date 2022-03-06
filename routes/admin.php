@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AuthorController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\TagController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('admin', [AdminAuthController::class, 'login'])->name('admin');
@@ -18,5 +19,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth-admin'], function () {
         'category' => CategoryController::class,
         'author' => AuthorController::class,
         'post' => PostController::class,
+        'tag' => TagController::class,
     ]);
 });
