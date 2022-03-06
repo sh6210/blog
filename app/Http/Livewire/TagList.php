@@ -24,7 +24,7 @@ class TagList extends Component
     public function render()
     {
         $data = [
-            'records' => $this->service->getListData(),
+            'records' => $this->service->getListData($this->perPage, $this->search),
         ];
 
         return view('livewire.tag-list', $data);

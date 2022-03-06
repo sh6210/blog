@@ -3,20 +3,16 @@
 namespace App\Http\Livewire;
 
 use App\Http\Livewire\Traits\CommonListElements;
-use App\Services\PostService;
+use App\Services\BookService;
 use Livewire\Component;
-use Livewire\WithPagination;
 
-class PostList extends Component
+class BookList extends Component
 {
-    use WithPagination, CommonListElements;
+    use CommonListElements;
 
-    private PostService $service;
+    private BookService $service;
 
-    /**
-     * @param PostService $service
-     */
-    public function boot(PostService $service)
+    public function boot(BookService $service)
     {
         $this->service = $service;
     }
@@ -27,6 +23,6 @@ class PostList extends Component
             'records' => $this->service->getListData($this->perPage, $this->search),
         ];
 
-        return view('livewire.post-list', $data);
+        return view('livewire.book-list', $data);
     }
 }
