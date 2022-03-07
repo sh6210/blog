@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AuthorController;
 use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TagController;
@@ -21,6 +22,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth-admin'], function () {
         'author' => AuthorController::class,
         'post' => PostController::class,
         'tag' => TagController::class,
-        'book' => BookController::class
+        'book' => BookController::class,
+        'comment' => CommentController::class
     ]);
 });
