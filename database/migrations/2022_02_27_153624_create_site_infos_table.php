@@ -20,6 +20,9 @@ class CreateSiteInfosTable extends Migration
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->foreignIdFor(Author::class)->constrained('authors')->cascadeOnDelete();
+            $table->string('theme')->nullable()->default('white');
+            $table->string('keywords')->nullable();
+            $table->string('favicon')->nullable();
             $table->timestamps();
         });
     }

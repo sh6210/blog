@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\SiteInfo;
 use Illuminate\Database\Seeder;
 
 class SiteInfoSeeder extends Seeder
@@ -13,6 +14,6 @@ class SiteInfoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        SiteInfo::factory()->create();
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Resources\SiteInfoResource;
+use App\Models\SiteInfo;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,8 +20,6 @@ use Illuminate\Validation\ValidationException;
 
 Route::post('/sanctum/token', function (Request $request)
 {
-    request()->device_name = 'web';
-
     $request->validate([
         'email'       => 'required|email',
         'password'    => 'required',
@@ -37,8 +37,12 @@ Route::post('/sanctum/token', function (Request $request)
     return $user->createToken($request->device_name)->plainTextToken;
 });
 
-Route::middleware('auth:sanctum')
-     ->get('/user', function (Request $request)
-     {
-         return $request->user();
-     });
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('user', function (Request $request) {
+        return $request->user();
+    });
+
+    Route::get('site-info', function (){
+        return new SiteInfoResource(SiteInfo::with('author')->first());
+    });
+});

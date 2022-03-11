@@ -26,6 +26,14 @@ final class ProjectConstants
     const POST_TYPE_2 = 'type_002';
     const POST_TYPE_3 = 'type_003';
 
+    const THEME_COLOR_BLACK = 'black';
+    const THEME_COLOR_WHITE = 'white';
+
+    public static array $themeColors = [
+        self::THEME_COLOR_BLACK => 'Black',
+        self::THEME_COLOR_WHITE => 'White',
+    ];
+
     public static array $postTypes = [
         self::POST_TYPE_1 => 'Post Type 001',
         self::POST_TYPE_2 => 'Post Type 002',
