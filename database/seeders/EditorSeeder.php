@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Editor;
 use Illuminate\Database\Seeder;
 
 class EditorSeeder extends Seeder
@@ -13,6 +14,6 @@ class EditorSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Editor::factory()->count(20)->create();
     }
 }

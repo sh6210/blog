@@ -17,7 +17,7 @@ class PostObserver
     public function created(Post $post)
     {
         $post->slug = createSlugFrom($post->title);
-        $post->excerpt = Str::words($post->content, 5);
+        $post->excerpt = createExcerpt($post->content);
         $post->saveQuietly();
     }
 
@@ -31,7 +31,7 @@ class PostObserver
     public function updated(Post $post)
     {
         $post->slug = createSlugFrom($post->title);
-        $post->excerpt = Str::words($post->content, 5);
+        $post->excerpt = createExcerpt($post->content);
         $post->saveQuietly();
     }
 

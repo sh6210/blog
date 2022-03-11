@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Utility\ProjectConstants;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class GeneralInfoFactory extends Factory
@@ -11,10 +12,14 @@ class GeneralInfoFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'status' => array_rand(ProjectConstants::$statuses),
+            'name' => $this->faker->domainName,
+            'site_logo' => '',
+            'profile_photo_url' => '',
+            'social' => ['email' => 'email@sample.com', 'youtube' => 'youtube_link', 'facebook' => 'facebook_link', 'twitter' => 'twitter_link']
         ];
     }
 }

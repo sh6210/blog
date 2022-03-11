@@ -28,19 +28,17 @@ class CommentRequest extends FormRequest
         if (request()->method === 'PUT') {
             return [
                 'content' => 'required',
-                'link' => 'nullable',
                 'status' => 'required', Rule::in(ProjectConstants::$statuses)
             ];
         }
 
         return [
-            'post_id' => 'required|exists:posts,id,' . optional($this->post)->id,
+            'post_id' => 'required|exists:posts,id',
             'parent_comment_id' => 'nullable|exists:comments,id',
             'content' => 'required',
-            'date_gmt' => 'required',
-            'link' => 'nullable',
+            'date_gmt' => 'nullable',
             'other_infos' => 'nullable',
-            'status' => 'required', Rule::in(ProjectConstants::$statuses)
+            'status' => ['nullable', Rule::in(ProjectConstants::$statuses)]
         ];
     }
 }

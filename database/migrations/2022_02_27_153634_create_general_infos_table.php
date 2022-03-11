@@ -17,9 +17,9 @@ class CreateGeneralInfosTable extends Migration
             $table->id();
             $table->string('status')->nullable();
             $table->string('name')->nullable();
-            $table->string('site_url')->nullable();
+            $table->string('site_logo')->nullable();
             $table->string('profile_photo_url')->nullable();
-            $table->jsonb('social_urls')->nullable();
+            $table->jsonb('social')->nullable();
             $table->timestamps();
         });
     }

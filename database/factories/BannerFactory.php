@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Utility\ProjectConstants;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BannerFactory extends Factory
@@ -11,10 +12,15 @@ class BannerFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'status' => array_rand(ProjectConstants::$statuses),
+            'title' => $this->faker->title,
+            'sub_title' => $this->faker->title,
+            'text' => $this->faker->sentence,
+            'description' => $this->faker->paragraph,
+            'image' => $this->faker->image,
         ];
     }
 }

@@ -19,8 +19,20 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             AuthorSeeder::class,
             SiteInfoSeeder::class,
+            GeneralInfoSeeder::class,
+            TagSeeder::class,
+            WriterSeeder::class,
+            EditorSeeder::class,
+            PublisherSeeder::class,
+            BookSeeder::class,
+            OrganizationSeeder::class,
             PostSeeder::class,
             CommentSeeder::class,
+            BannerSeeder::class,
+            AboutSeeder::class,
+            ContactSeeder::class,
+            FooterSeeder::class,
+            DonationSeeder::class
         ]);
     }
 }

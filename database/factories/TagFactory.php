@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Utility\ProjectConstants;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TagFactory extends Factory

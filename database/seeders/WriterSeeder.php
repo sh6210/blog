@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Writer;
 use Illuminate\Database\Seeder;
 
 class WriterSeeder extends Seeder
@@ -13,6 +14,6 @@ class WriterSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Writer::factory()->count(20)->create();
     }
 }

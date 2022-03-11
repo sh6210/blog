@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Utility\ProjectConstants;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class FooterFactory extends Factory
@@ -11,10 +12,13 @@ class FooterFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'status' => ProjectConstants::STATUS_ACTIVE,
+            'logo' => $this->faker->url,
+            'content' => $this->faker->paragraph,
+            'copyright' => $this->faker->sentence,
         ];
     }
 }

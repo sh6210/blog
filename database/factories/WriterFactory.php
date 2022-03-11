@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Utility\ProjectConstants;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class WriterFactory extends Factory
@@ -11,10 +12,14 @@ class WriterFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'status' => array_rand(ProjectConstants::$statuses),
+            'name'   => $this->faker->name,
+            'phone'  => $this->faker->phoneNumber,
+            'email'  => $this->faker->safeEmail,
+            'image'  => $this->faker->url,
         ];
     }
 }

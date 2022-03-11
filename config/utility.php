@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Str;
 
 if (!function_exists('createSlugFrom')) {
     function createSlugFrom($str): string
@@ -9,10 +10,18 @@ if (!function_exists('createSlugFrom')) {
     }
 }
 
+if (!function_exists('createExcerpt')) {
+    function createExcerpt($str): string
+    {
+        return Str::words($str, 5);
+    }
+}
+
 if (!function_exists('attachmentPath')) {
     function attachmentPath($attachment): string
     {
         $path = 'storage' . DIRECTORY_SEPARATOR . $attachment;
+
         return asset($path);
     }
 }

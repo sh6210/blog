@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Footer;
 use Illuminate\Database\Seeder;
 
 class FooterSeeder extends Seeder
@@ -13,6 +14,6 @@ class FooterSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Footer::factory()->create();
     }
 }
