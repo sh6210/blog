@@ -6,6 +6,7 @@ use App\Http\Requests\CommentRequest;
 use App\Http\Resources\CommentResource;
 use App\Models\Comment;
 use App\Services\CommentService;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class CommentController
 {
@@ -14,6 +15,11 @@ class CommentController
     public function __construct(CommentService $service)
     {
         $this->service = $service;
+    }
+
+    public function index(): AnonymousResourceCollection
+    {
+        return CommentResource::collection(Comment::paginate());
     }
 
     public function store(CommentRequest $request): CommentResource
