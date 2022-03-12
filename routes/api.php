@@ -21,19 +21,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/sanctum/token', [AuthController::class, 'createToken']);
 
-Route::middleware('auth:sanctum')->group(function()
+Route::middleware('auth:sanctum')->prefix('v1')->group(function()
 {
     Route::get('user', [GeneralController::class, 'user']);
-
-    Route::get('categories', [CategoryController::class, 'index']);
-
-    Route::get('tags', [TagController::class, 'index']);
 
     Route::get('books', [BookController::class, 'index']);
     Route::get('books/{book}', [BookController::class, 'show']);
 
     Route::get('comments', [CommentController::class, 'index']);
     Route::post('comment', [CommentController::class, 'store']);
+
+    Route::get('categories', [CategoryController::class, 'index']);
+    Route::get('tags', [TagController::class, 'index']);
 
     Route::get('site-info', [GeneralController::class, 'siteInfo']);
     Route::get('general-info', [GeneralController::class, 'generalInfo']);
