@@ -22,8 +22,8 @@
                 <td>{{$record->url}}</td>
                 <td>{{optional($record->writer)->name}}</td>
                 <td>{{optional($record->editor)->name}}</td>
-                <td>{{$constants::$yesNo[$record->is_at_home]}}</td>
-                <td>{{$constants::$yesNo[$record->is_at_slider]}}</td>
+                <td>{{$record->is_at_home ? $constants::$yesNo[$record->is_at_home] : 'N/A'}}</td>
+                <td>{{$record->is_at_slider ? $constants::$yesNo[$record->is_at_slider] : 'N/A'}}</td>
                 <td>{{\Carbon\Carbon::parse($record->published_at)->format('D M, Y')}}</td>
                 <td>
                     <a class="btn float-left" href="{{route('tag.edit', $record->id)}}"><i class="fas fa-edit fa-1x"></i> </a>
