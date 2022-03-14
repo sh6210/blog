@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
 @section('title', 'Category')
 @section('content')
-    <livewire:category-list/>
+    <livewire:role-list/>
 @endsection

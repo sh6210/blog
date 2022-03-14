@@ -29,6 +29,37 @@ final class ProjectConstants
     const THEME_COLOR_BLACK = 'black';
     const THEME_COLOR_WHITE = 'white';
 
+    const PERMISSION_MODULE_CATEGORY = 'category';
+    const PERMISSION_MODULE_TAG = 'tag';
+    const PERMISSION_MODULE_BOOK = 'book';
+    const PERMISSION_MODULE_COMMENT = 'comment';
+    const PERMISSION_MODULE_MENU = 'menu';
+    const PERMISSION_SITE_INFO = 'site_info';
+    const PERMISSION_GENERAL_INFO = 'general_info';
+    const PERMISSION_ORGANIZATION = 'organization';
+    const PERMISSION_ABOUT = 'about';
+    const PERMISSION_CONTACT = 'contact';
+    const PERMISSION_FOOTER = 'footer';
+    const PERMISSION_DONATION = 'donation';
+
+    public static array $modulePermissions = [
+        self::PERMISSION_MODULE_CATEGORY => 'Category',
+        self::PERMISSION_MODULE_TAG => 'Tag',
+        self::PERMISSION_MODULE_BOOK => 'Book',
+        self::PERMISSION_MODULE_COMMENT => 'Comment',
+        self::PERMISSION_MODULE_MENU => 'Menu',
+    ];
+
+    public static array $singlePermissions = [
+        self::PERMISSION_SITE_INFO => 'Site Info',
+        self::PERMISSION_GENERAL_INFO => 'General Info',
+        self::PERMISSION_ORGANIZATION => 'Organization',
+        self::PERMISSION_ABOUT => 'About',
+        self::PERMISSION_CONTACT => 'Contact',
+        self::PERMISSION_FOOTER => 'Footer',
+        self::PERMISSION_DONATION => 'Donation',
+    ];
+
     public static array $themeColors = [
         self::THEME_COLOR_BLACK => 'Black',
         self::THEME_COLOR_WHITE => 'White',

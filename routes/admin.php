@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TagController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth-admin'], function () {
         'post' => PostController::class,
         'tag' => TagController::class,
         'book' => BookController::class,
-        'comment' => CommentController::class
+        'comment' => CommentController::class,
+        'role' => RoleController::class,
     ]);
 });

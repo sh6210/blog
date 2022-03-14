@@ -19,7 +19,7 @@ class CommentController
 
     public function index(): AnonymousResourceCollection
     {
-        return CommentResource::collection(Comment::paginate());
+        return CommentResource::collection(Comment::with('parentComments', 'creator')->paginate());
     }
 
     public function store(CommentRequest $request): CommentResource

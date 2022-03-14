@@ -19,7 +19,7 @@ class CommentResource extends JsonResource
         return [
             'id' => $this->id,
             'postId' => $this->post,
-            'parentId' => $this->parent_comment,
+            'parentId' => $this->parentComments,
             'content' => $this->content,
             'date' => $this->created_at,
             'dateGmt' => $this->date_gmt,
