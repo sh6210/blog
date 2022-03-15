@@ -10,7 +10,6 @@
             </div>
             <div class="col-md-2">
                 <h5>Single Permissions</h5>
-                <hr>
                 <table class="table">
                     <thead>
                     <tr>
@@ -33,7 +32,6 @@
             </div>
             <div class="col-md-6">
                 <h5>Module Permissions</h5>
-                <hr>
                 <table class="table">
                     <thead>
                     <tr>
