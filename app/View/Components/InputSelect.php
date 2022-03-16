@@ -33,7 +33,7 @@ class InputSelect extends Component
 
     public function isSelected($option): bool
     {
-        return $option == $this->selected;
+        return is_array($this->selected) ? in_array($this->selected, $option) : $option == $this->selected;
     }
 
     /**

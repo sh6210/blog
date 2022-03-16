@@ -1,4 +1,4 @@
-<x-record-list title="Posts" newEntryLink="{{route('role.create')}}" :records="$records">
+<x-record-list title="Role" newEntryLink="{{route('role.create')}}" :records="$records">
     <table class="table">
         <thead>
         <tr>

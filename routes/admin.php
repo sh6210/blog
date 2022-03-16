@@ -9,22 +9,25 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('admin', [AdminAuthController::class, 'login'])->name('admin');
-Route::get('admin/login',[AdminAuthController::class, 'login'])->name('admin.login');
+Route::get('admin/login', [AdminAuthController::class, 'login'])->name('admin.login');
 Route::post('admin/login', [AdminAuthController::class, 'postLogin'])->name('admin.login-post');
 Route::get('admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth-admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth-admin'], function()
+{
     Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::resources([
         'category' => CategoryController::class,
-        'author' => AuthorController::class,
-        'post' => PostController::class,
-        'tag' => TagController::class,
-        'book' => BookController::class,
-        'comment' => CommentController::class,
-        'role' => RoleController::class,
+        'author'   => AuthorController::class,
+        'post'     => PostController::class,
+        'tag'      => TagController::class,
+        'book'     => BookController::class,
+        'comment'  => CommentController::class,
+        'role'     => RoleController::class,
+        'user'    => UserController::class,
     ]);
 });
