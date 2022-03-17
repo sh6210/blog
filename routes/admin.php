@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GeneralController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TagController;
@@ -20,6 +21,7 @@ Route::get('admin/logout', [AdminAuthController::class, 'logout'])->name('admin.
 Route::group(['prefix' => 'admin', 'middleware' => 'auth-admin'], function()
 {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('download-attachment', [GeneralController::class, 'downloadAttachment'])->name('download.attachment');
     Route::resources([
         'category' => CategoryController::class,
         'author'   => AuthorController::class,
@@ -28,6 +30,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth-admin'], function()
         'book'     => BookController::class,
         'comment'  => CommentController::class,
         'role'     => RoleController::class,
-        'user'    => UserController::class,
+        'user'     => UserController::class,
     ]);
 });

@@ -6,6 +6,7 @@ use App\Interfaces\ListData;
 use App\Models\Book;
 use App\Traits\OnlyStore;
 use App\Traits\OnlyUpdate;
+use Illuminate\Support\Facades\DB;
 
 class BookRepository implements ListData
 {
@@ -15,6 +16,6 @@ class BookRepository implements ListData
 
     public function getListData($perPage, $search)
     {
-        return $this->model::with('writer', 'editor')->paginate($perPage);
+        return $this->model::with('writer', 'editors')->latest()->paginate($perPage);
     }
 }

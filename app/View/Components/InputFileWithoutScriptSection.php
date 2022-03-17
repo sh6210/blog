@@ -2,12 +2,13 @@
 
 namespace App\View\Components;
 
+use Closure;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class InputFile extends Component
+class InputFileWithoutScriptSection extends Component
 {
     public string $title;
     public string $name;
@@ -26,10 +27,10 @@ class InputFile extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return Application|Factory|View
+     * @return View|Closure|string
      */
     public function render(): Factory|View|Application
     {
-        return view('components.file-input');
+        return view('components.file-input-without-script-section');
     }
 }

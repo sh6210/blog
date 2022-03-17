@@ -1,7 +1,6 @@
 @extends('admin.layout.master')
 @section('title', 'User')
 @section('content')
-{{--    @dd($record)--}}
     <x-edit title="User" action="{{route('user.update', $record->id)}}" indexPageLink="{{route('user.index')}}">
         <x-input-text name="name" value="{{$record->name}}"></x-input-text>
         <x-input-text name="email" type="email" value="{{$record->email}}"></x-input-text>

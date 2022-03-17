@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Book;
 use App\Models\Editor;
 use App\Models\Publisher;
 use App\Models\Writer;
@@ -24,9 +25,7 @@ class BookFactory extends Factory
             'name' => $name,
             'url' => $this->faker->url,
             'is_at_home' => array_rand(ProjectConstants::$yesNo),
-            'cover_image' => $this->faker->url,
             'writer_id' => ($writer = Writer::inRandomOrder()->first()) ? $writer->id : Writer::factory()->create(),
-            'editor_id' => ($editor = Editor::inRandomOrder()->first()) ? $editor->id : Editor::factory()->create(),
             'publisher_id' => ($publisher = Publisher::inRandomOrder()->first()) ? $publisher->id : Publisher::factory()->create(),
             'excerpt' => '',
             'description' => $this->faker->paragraph,
@@ -35,5 +34,13 @@ class BookFactory extends Factory
             'read_link' => $this->faker->url,
             'buy_link' => $this->faker->url,
         ];
+    }
+
+    public function configure(): BookFactory
+    {
+        return $this->afterCreating(function (Book $book) {
+            $editors = Editor::inRandomOrder()->limit(2)->get();
+            $book->editors()->saveMany($editors);
+        });
     }
 }

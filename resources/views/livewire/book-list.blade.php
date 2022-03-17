@@ -1,4 +1,4 @@
-<x-record-list title="Books" newEntryLink="{{route('book.create')}}" :records="$records">
+<x-record-list title="Book" newEntryLink="{{route('book.create')}}" :records="$records">
     <table class="table">
         <thead>
         <tr>
@@ -21,13 +21,13 @@
                 <td>{{$record->name}}</td>
                 <td>{{$record->url}}</td>
                 <td>{{optional($record->writer)->name}}</td>
-                <td>{{optional($record->editor)->name}}</td>
-                <td>{{$constants::$yesNo[$record->is_at_home]}}</td>
-                <td>{{$constants::$yesNo[$record->is_at_slider]}}</td>
+                <td>{{$record->editors->count() ? $record->editors->pluck('name')->join(', ') : ''}}</td>
+                <td>{{$record->is_at_home ? $constants::$yesNo[$record->is_at_home] : ''}}</td>
+                <td>{{$record->is_at_slider ? $constants::$yesNo[$record->is_at_slider] : ''}}</td>
                 <td>{{\Carbon\Carbon::parse($record->published_at)->format('D M, Y')}}</td>
                 <td>
-                    <a class="btn float-left" href="{{route('tag.edit', $record->id)}}"><i class="fas fa-edit fa-1x"></i> </a>
-                    <form action="{{route('tag.destroy', $record->id)}}" method="post" class="float-left">
+                    <a class="btn float-left" href="{{route('book.edit', $record->id)}}"><i class="fas fa-edit fa-1x"></i> </a>
+                    <form action="{{route('book.destroy', $record->id)}}" method="post" class="float-left">
                         @csrf @method('delete')
                         <button class="btn" type="submit"><i class="fas fa-trash fa-1x"></i></button>
                     </form>
