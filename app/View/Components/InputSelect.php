@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Menu;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -21,15 +22,17 @@ class InputSelect extends Component
     public bool $multiple;
     public string $id;
     public bool $placeholderSelected;
+    public $targetColumn;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $records, $selected = null, $label = false, $placeholder = null, $placeholderSelected = true, $multiple = false, $required = '')
+    public function __construct($name, $records, $targetColumn = '', $selected = null, $label = false, $placeholder = null, $placeholderSelected = true, $multiple = false, $required = '')
     {
         $this->name = $name . ($multiple ? '[]' : '');
+        $this->targetColumn = $targetColumn;
         $this->label = $label ?: prepareInputLabel($name);
         $this->records = $records;
         $this->selected = $selected;
@@ -50,7 +53,7 @@ class InputSelect extends Component
      *
      * @return Application|Factory|View
      */
-    public function render()
+    public function render(): View|Factory|Application
     {
         return view('components.input-select');
     }

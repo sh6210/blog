@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GeneralController;
+use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TagController;
@@ -31,5 +32,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth-admin'], function()
         'comment'  => CommentController::class,
         'role'     => RoleController::class,
         'user'     => UserController::class,
+        'menu'     => MenuController::class,
     ]);
 });
