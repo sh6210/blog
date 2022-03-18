@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="{{ env('APP_URL') }}" class="brand-link">
         <img src="{{asset('admin-panel/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Hamilton</span>
+        <span class="brand-text font-weight-light">Blog</span>
     </a>
 
     <!-- Sidebar -->
@@ -16,6 +16,12 @@
                     <a href="{{ route('admin') }}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.organization') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Organization</p>
                     </a>
                 </li>
                 <li class="nav-item {{--menu-open--}}">
@@ -161,6 +167,31 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.about') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>About</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.contact') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Contact</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.footer') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Footer</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.donation') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Donation</p>
+                    </a>
                 </li>
             </ul>
         </nav>
