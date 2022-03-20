@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Repositories\UserRepository;
 use App\Services\UserPermissionService;
-use App\Utility\RouteMappingConstants;
+use App\Utility\AclMappingConstants;
 use Closure;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -29,7 +29,7 @@ class AclMiddleware
 
         $routeName = request()->route()->getName();
 
-        if (!isset(RouteMappingConstants::$permissions[$routeName]) or isShowAble(RouteMappingConstants::$permissions[$routeName])) {
+        if (!isset(AclMappingConstants::$permissions[$routeName]) or isShowAble(AclMappingConstants::$permissions[$routeName])) {
             return $next($request);
         }
 

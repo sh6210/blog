@@ -78,6 +78,24 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item {{menuOpen('book.*')}}">
+                    <a href="#" class="nav-link {{findActive('book.*')}}">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>Books<i class="fas fa-angle-left right"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('book.index')}}" class="nav-link {{findActive('book.index')}}">
+                                <i class="far fa-circle nav-icon"></i><p>List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('book.create')}}" class="nav-link {{findActive('book.create')}}">
+                                <i class="far fa-circle nav-icon"></i><p>Create</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item {{menuOpen('tag.*')}}">
                     <a href="#" class="nav-link {{findActive('tag.*')}}">
                         <i class="nav-icon fas fa-book"></i>

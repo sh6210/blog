@@ -2,7 +2,7 @@
 
 namespace App\Utility;
 
-final class RouteMappingConstants
+final class AclMappingConstants
 {
     const ADMIN_DASHBOARD = 'admin.dashboard';
     const ADMIN_ABOUT = 'admin.about';
@@ -96,15 +96,15 @@ final class RouteMappingConstants
         self::ADMIN_AUTHOR_SHOW => 'author_read',
         self::ADMIN_AUTHOR_UPDATE => 'author_update',
         self::ADMIN_AUTHOR_DESTROY => 'author_delete',
-        self::ADMIN_AUTHOR_EDIT => 'author_edit',
+        self::ADMIN_AUTHOR_EDIT => 'author_update',
 
         self::ADMIN_BOOK_INDEX => 'book_read',
         self::ADMIN_BOOK_STORE => 'book_create',
         self::ADMIN_BOOK_CREATE => 'book_create',
         self::ADMIN_BOOK_SHOW => 'book_read',
-        self::ADMIN_BOOK_UPDATE => 'book_edit',
+        self::ADMIN_BOOK_UPDATE => 'book_update',
         self::ADMIN_BOOK_DESTROY => 'book_delete',
-        self::ADMIN_BOOK_EDIT => 'book_edit',
+        self::ADMIN_BOOK_EDIT => 'book_update',
 
         self::ADMIN_CATEGORY_INDEX => 'category_read',
         self::ADMIN_CATEGORY_STORE => 'category_create',
@@ -112,7 +112,7 @@ final class RouteMappingConstants
         self::ADMIN_CATEGORY_SHOW => 'category_show',
         self::ADMIN_CATEGORY_UPDATE => 'category_update',
         self::ADMIN_CATEGORY_DESTROY => 'category_delete',
-        self::ADMIN_CATEGORY_EDIT => 'category_edit',
+        self::ADMIN_CATEGORY_EDIT => 'category_update',
 
         self::ADMIN_COMMENT_INDEX => 'comment_read',
         self::ADMIN_COMMENT_STORE => 'comment_create',
