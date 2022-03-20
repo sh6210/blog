@@ -24,7 +24,7 @@ Route::get('admin/login', [AdminAuthController::class, 'login'])->name('admin.lo
 Route::post('admin/login', [AdminAuthController::class, 'postLogin'])->name('admin.login-post');
 Route::get('admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth-admin'], function()
+Route::group(['prefix' => 'admin', 'middleware' => ['auth-admin', 'acl']], function()
 {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('organization', [OrganizationController::class, 'index'])->name('admin.organization');

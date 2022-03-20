@@ -53,3 +53,44 @@ if (!function_exists('adminUser')) {
         return auth()->guard('admin')->user();
     }
 }
+
+if (!function_exists('loggedInUserPermissions')) {
+    function loggedInUserPermissions($permissionName = '')
+    {
+        $permissions = app('aclService')->pluck('name');
+
+        return $permissionName ? $permissions->contains($permissionName) : $permissions;
+    }
+}
+
+if (!function_exists('isShowAble')) {
+    function isShowAble($permissionName) {
+        return loggedInUserPermissions($permissionName);
+    }
+}
+
+if (!function_exists('menuOpen')) {
+    function menuOpen($routeName): string
+    {
+        return isActive($routeName) ? 'menu-open' : '';
+    }
+}
+
+if (!function_exists('isActive')) {
+    function isActive($routeName): string
+    {
+//        return request()->route()->getName() === $routeName;
+        return preg_match("/$routeName/", request()->route()->getName());
+    }
+}
+
+if (!function_exists('findActive')) {
+    function findActive($routeName): string
+    {
+        return is_array($routeName)
+            ? (in_array(request()->route()->getName(), $routeName) ? 'active' : '')
+//            : (request()->route()->getName() === $routeName ? 'active' : '');
+            : (preg_match("/$routeName/", request()->route()->getName()) ? 'active' : '');
+    }
+}
+

@@ -7,6 +7,7 @@
             <div class="col-md-6 invoice-col">
                 <address>
                     <strong>Status:</strong> {{$record->status ? $constants::$statuses[$record->status] : 'N/A'}}<br>
+                    <br>
                     <strong>Accounts:</strong>
                     <br>
                     @foreach($record->accounts as $key => $val)

@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             FooterSeeder::class,
             DonationSeeder::class,
             PermissionSeeder::class,
+            RoleSeeder::class,
         ]);
     }
 }
