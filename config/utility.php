@@ -63,9 +63,19 @@ if (!function_exists('loggedInUserPermissions')) {
     }
 }
 
-if (!function_exists('isShowAble')) {
-    function isShowAble($permissionName) {
-        return loggedInUserPermissions($permissionName);
+if (!function_exists('checkPermissions')) {
+    function checkPermissions($permissionName): bool
+    {
+        if (!is_array($permissionName))
+            return loggedInUserPermissions($permissionName);
+
+        $permissions = loggedInUserPermissions();
+        foreach ($permissionName as $name) {
+            if (!$permissions->contains($name)) continue;
+            return true;
+        }
+
+        return false;
     }
 }
 
