@@ -19,7 +19,7 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('admin', [AdminAuthController::class, 'login'])->name('admin');
+Route::get('admin', [AdminAuthController::class, 'login'])->name('admin')->middleware('acl');
 Route::get('admin/login', [AdminAuthController::class, 'login'])->name('admin.login');
 Route::post('admin/login', [AdminAuthController::class, 'postLogin'])->name('admin.login-post');
 Route::get('admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');

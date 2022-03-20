@@ -29,7 +29,7 @@ class AclMiddleware
 
         $routeName = request()->route()->getName();
 
-        if (!isset(AclMappingConstants::$permissions[$routeName]) or isShowAble(AclMappingConstants::$permissions[$routeName])) {
+        if (!isset(AclMappingConstants::$permissions[$routeName]) or loggedInUserPermissions(AclMappingConstants::$permissions[$routeName])) {
             return $next($request);
         }
 
