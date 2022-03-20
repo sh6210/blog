@@ -6,17 +6,23 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFooterRequest;
 use App\Http\Requests\UpdateFooterRequest;
 use App\Models\Footer;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class FooterController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
-    public function index()
+    public function index(): View|Factory|Application
     {
-        //
+        $data = [
+            'record' => Footer::first(),
+        ];
+        return view('admin.footer.index', $data);
     }
 
     /**

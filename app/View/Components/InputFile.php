@@ -28,7 +28,7 @@ class InputFile extends Component
      *
      * @return Application|Factory|View
      */
-    public function render()
+    public function render(): Factory|View|Application
     {
         return view('components.file-input');
     }

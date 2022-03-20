@@ -13,11 +13,11 @@ final class ProjectConstants
     const FLASH_WARNING = 'warning';
     const FLASH_INFO = 'info';
 
-    const PDF = 'pdf';
+    const PDF = 'application/pdf';
     const CSV = 'csv';
-    const PNG = 'png';
-    const JPG = 'jpg';
-    const JPEG = 'jpeg';
+    const PNG = 'image/png';
+    const JPG = 'image/jpg';
+    const JPEG = 'image/jpeg';
 
     const YES = 1;
     const NO = 0;
@@ -41,6 +41,12 @@ final class ProjectConstants
     const PERMISSION_CONTACT = 'contact';
     const PERMISSION_FOOTER = 'footer';
     const PERMISSION_DONATION = 'donation';
+
+    public static array $uploadAbleImageTypes = [
+        self::JPEG => 'JPEG',
+        self::JPG => 'JPG',
+        self::PNG => 'PNG'
+    ];
 
     public static array $modulePermissions = [
         self::PERMISSION_MODULE_CATEGORY => 'Category',

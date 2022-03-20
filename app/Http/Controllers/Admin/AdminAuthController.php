@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Utility\ProjectConstants;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Session;
 
 class AdminAuthController extends Controller
@@ -32,7 +33,7 @@ class AdminAuthController extends Controller
 
         if (adminAuth()->attempt([
             'email' => $request->input('email'),
-            'password' => env('APP_SALT') . $request->input('password')
+            'password' => $request->input('password')
         ])) {
             Session::flash('success', 'Login successful!!');
 
@@ -42,7 +43,7 @@ class AdminAuthController extends Controller
         return back()->with('error', 'Credential mismatch');
     }
 
-    public function logout()
+    public function logout(): Redirector|Application|RedirectResponse
     {
         adminAuth()->logout();
 

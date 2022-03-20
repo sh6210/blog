@@ -30,9 +30,8 @@ class CreateBooksTable extends Migration
             $table->string('read_link')->nullable();
             $table->string('buy_link')->nullable();
             $table->string('excerpt')->nullable();
-            $table->foreignIdFor(Writer::class)->constrained('writers')->cascadeOnDelete();
-            $table->foreignIdFor(Editor::class)->constrained('editors')->cascadeOnDelete();
-            $table->foreignIdFor(Publisher::class)->constrained('publishers')->cascadeOnDelete();
+            $table->foreignIdFor(Writer::class)->nullable()->constrained('writers')->cascadeOnDelete();
+            $table->foreignIdFor(Publisher::class)->nullable()->constrained('publishers')->cascadeOnDelete();
             $table->string('published_at')->nullable();
             $table->timestamps();
         });

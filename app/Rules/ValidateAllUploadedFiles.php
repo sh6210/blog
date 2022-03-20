@@ -9,14 +9,16 @@ use Illuminate\Http\UploadedFile;
 class ValidateAllUploadedFiles implements Rule
 {
     private string $errorMessage;
+    private string|array $validTypes;
 
     /**
      * Create a new rule instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($validTypes)
     {
+        $this->validTypes = $validTypes;
         $this->errorMessage = 'Upload File Error';
     }
 
@@ -55,8 +57,12 @@ class ValidateAllUploadedFiles implements Rule
 
     private function checkValidFormat(UploadedFile $value): bool
     {
-        if (!array_search($value->getClientMimeType(), ProjectConstants::$allowedUploadTypes)) {
-            $this->errorMessage = 'Upload file type error, allowed types are '. implode(',', array_keys(ProjectConstants::$allowedUploadTypes));
+        $isInValidTypes = is_array($this->validTypes)
+            ? array_key_exists($value->getClientMimeType(), $this->validTypes)
+            : $value->getClientMimeType() === $this->validTypes;
+
+        if (!$isInValidTypes) {
+            $this->errorMessage = 'Upload file type error, allowed types are '. implode(',', $this->validTypes);
             return false;
         }
 
