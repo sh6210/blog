@@ -89,7 +89,6 @@ if (!function_exists('menuOpen')) {
 if (!function_exists('isActive')) {
     function isActive($routeName): string
     {
-//        return request()->route()->getName() === $routeName;
         return preg_match("/$routeName/", request()->route()->getName());
     }
 }
@@ -99,7 +98,6 @@ if (!function_exists('findActive')) {
     {
         return is_array($routeName)
             ? (in_array(request()->route()->getName(), $routeName) ? 'active' : '')
-//            : (request()->route()->getName() === $routeName ? 'active' : '');
             : (preg_match("/$routeName/", request()->route()->getName()) ? 'active' : '');
     }
 }

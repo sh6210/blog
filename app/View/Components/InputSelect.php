@@ -29,7 +29,17 @@ class InputSelect extends Component
      *
      * @return void
      */
-    public function __construct($name, $records, $targetColumn = '', $selected = null, $label = false, $placeholder = null, $placeholderSelected = true, $multiple = false, $required = '')
+    public function __construct(
+        $name,
+        $records,
+        $targetColumn = '',
+        $selected = null,
+        $label = false,
+        $placeholder = null,
+        $placeholderSelected = true,
+        $multiple = false,
+        $required = ''
+    )
     {
         $this->name = $name . ($multiple ? '[]' : '');
         $this->targetColumn = $targetColumn;

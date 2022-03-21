@@ -69,7 +69,7 @@
                 </li>
                 @endshow
 
-                @show(['author_create', 'author_read'])
+                @show(['post_create', 'post_read'])
                 <li class="nav-item {{menuOpen('post.*')}}">
                     <a href="#" class="nav-link {{findActive('post.*')}}">
                         <i class="nav-icon fas fa-book"></i>

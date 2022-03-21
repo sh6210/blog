@@ -32,6 +32,8 @@ final class ProjectConstants
     const PERMISSION_MODULE_CATEGORY = 'category';
     const PERMISSION_MODULE_TAG = 'tag';
     const PERMISSION_MODULE_BOOK = 'book';
+    const PERMISSION_MODULE_POST = 'post';
+    const PERMISSION_MODULE_ROLE = 'role';
     const PERMISSION_MODULE_COMMENT = 'comment';
     const PERMISSION_MODULE_MENU = 'menu';
     const PERMISSION_SITE_INFO = 'site_info';
@@ -52,6 +54,8 @@ final class ProjectConstants
         self::PERMISSION_MODULE_CATEGORY => 'Category',
         self::PERMISSION_MODULE_TAG => 'Tag',
         self::PERMISSION_MODULE_BOOK => 'Book',
+        self::PERMISSION_MODULE_POST => 'Post',
+        self::PERMISSION_MODULE_ROLE => 'Role',
         self::PERMISSION_MODULE_COMMENT => 'Comment',
         self::PERMISSION_MODULE_MENU => 'Menu',
     ];
