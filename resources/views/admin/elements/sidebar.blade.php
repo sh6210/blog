@@ -18,15 +18,16 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                @if(checkPermissions('organization'))
+                @show('organization')
                 <li class="nav-item">
                     <a href="{{ route('admin.organization') }}" class="nav-link {{findActive('admin.organization')}}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Organization</p>
                     </a>
                 </li>
-                @endif
-                @if(checkPermissions(['category_create', 'category_read']))
+                @endshow
+
+                @show(['category_create', 'category_read'])
                 <li class="nav-item {{menuOpen('category.*')}}">
                     <a href="#" class="nav-link {{findActive('category.*')}}">
                         <i class="nav-icon fas fa-book"></i>
@@ -45,8 +46,9 @@
                         </li>
                     </ul>
                 </li>
-                @endif
-                @if(checkPermissions(['author_create', 'author_read']))
+                @endshow
+
+                @show(['author_create', 'author_read'])
                 <li class="nav-item {{menuOpen('author.*')}}">
                     <a href="#" class="nav-link {{findActive('author.*')}}">
                         <i class="nav-icon fas fa-book"></i>
@@ -65,8 +67,9 @@
                         </li>
                     </ul>
                 </li>
-                @endif
-                @if(checkPermissions(['author_create', 'author_read']))
+                @endshow
+
+                @show(['author_create', 'author_read'])
                 <li class="nav-item {{menuOpen('post.*')}}">
                     <a href="#" class="nav-link {{findActive('post.*')}}">
                         <i class="nav-icon fas fa-book"></i>
@@ -85,8 +88,9 @@
                         </li>
                     </ul>
                 </li>
-                @endif
-                @if(checkPermissions(['book_create', 'book_read']))
+                @endshow
+
+                @show(['book_create', 'book_read'])
                 <li class="nav-item {{menuOpen('book.*')}}">
                     <a href="#" class="nav-link {{findActive('book.*')}}">
                         <i class="nav-icon fas fa-book"></i>
@@ -105,8 +109,9 @@
                         </li>
                     </ul>
                 </li>
-                @endif
-                @if(checkPermissions(['tag_create', 'tag_read']))
+                @endshow
+
+                @show(['tag_create', 'tag_read'])
                 <li class="nav-item {{menuOpen('tag.*')}}">
                     <a href="#" class="nav-link {{findActive('tag.*')}}">
                         <i class="nav-icon fas fa-book"></i>
@@ -125,8 +130,9 @@
                         </li>
                     </ul>
                 </li>
-                @endif
-                @if(checkPermissions(['comment_create', 'comment_read']))
+                @endshow
+
+                @show(['comment_create', 'comment_read'])
                 <li class="nav-item {{menuOpen('comment.*')}}">
                     <a href="#" class="nav-link {{findActive('comment.*')}}">
                         <i class="nav-icon fas fa-book"></i>
@@ -145,8 +151,9 @@
                         </li>
                     </ul>
                 </li>
-                @endif
-                @if(checkPermissions(['role_create', 'role_read']))
+                @endshow
+
+                @show(['role_create', 'role_read'])
                 <li class="nav-item {{menuOpen('role.*')}}">
                     <a href="#" class="nav-link {{findActive('role.*')}}">
                         <i class="nav-icon fas fa-book"></i>
@@ -165,8 +172,9 @@
                         </li>
                     </ul>
                 </li>
-                @endif
-                @if(checkPermissions(['user_create', 'user_read']))
+                @endshow
+
+                @show(['user_create', 'user_read'])
                 <li class="nav-item {{menuOpen('user.*')}}">
                     <a href="#" class="nav-link {{findActive('user.*')}}">
                         <i class="nav-icon fas fa-book"></i>
@@ -185,8 +193,9 @@
                         </li>
                     </ul>
                 </li>
-                @endif
-                @if(checkPermissions(['menu_create', 'menu_read']))
+                @endshow
+
+                @show(['menu_create', 'menu_read'])
                 <li class="nav-item {{menuOpen('menu.*')}}">
                     <a href="#" class="nav-link {{findActive('menu.*')}}">
                         <i class="nav-icon fas fa-book"></i>
@@ -205,39 +214,44 @@
                         </li>
                     </ul>
                 </li>
-                @endif
-                @if(checkPermissions('about'))
+                @endshow
+
+                @show('about')
                 <li class="nav-item">
                     <a href="{{ route('admin.about') }}" class="nav-link {{findActive('admin.about')}}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>About</p>
                     </a>
                 </li>
-                @endif
-                @if(checkPermissions('contact'))
+                @endshow
+
+                @show('contact')
                 <li class="nav-item">
                     <a href="{{ route('admin.contact') }}" class="nav-link {{findActive('admin.contact')}}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Contact</p>
                     </a>
                 </li>
-                @endif
-                @if(checkPermissions('footer'))
+                @endshow
+
+                @show('footer')
                 <li class="nav-item">
                     <a href="{{ route('admin.footer') }}" class="nav-link {{findActive('admin.footer')}}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Footer</p>
                     </a>
                 </li>
-                @endif
-                @if(checkPermissions('donation'))
+                @endshow
+
+                @show('donation')
                 <li class="nav-item">
                     <a href="{{ route('admin.donation') }}" class="nav-link {{findActive('admin.donation')}}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Donation</p>
                     </a>
                 </li>
-                @endif
+                @endshow
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
