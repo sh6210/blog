@@ -22,7 +22,7 @@ class CreateAboutsTable extends Migration
             $table->string('image')->nullable();
             $table->string('content')->nullable();
             $table->string('story_title')->nullable();
-            $table->string('story_content')->nullable();
+            $table->text('story_content')->nullable();
             $table->string('education_title')->nullable();
             $table->string('education_content')->nullable();
             $table->string('research_title')->nullable();

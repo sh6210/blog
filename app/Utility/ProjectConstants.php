@@ -34,6 +34,9 @@ final class ProjectConstants
     const PERMISSION_MODULE_BOOK = 'book';
     const PERMISSION_MODULE_COMMENT = 'comment';
     const PERMISSION_MODULE_MENU = 'menu';
+    const PERMISSION_MODULE_ROLE = 'role';
+    const PERMISSION_MODULE_USER = 'user';
+
     const PERMISSION_SITE_INFO = 'site_info';
     const PERMISSION_GENERAL_INFO = 'general_info';
     const PERMISSION_ORGANIZATION = 'organization';
@@ -54,6 +57,8 @@ final class ProjectConstants
         self::PERMISSION_MODULE_BOOK => 'Book',
         self::PERMISSION_MODULE_COMMENT => 'Comment',
         self::PERMISSION_MODULE_MENU => 'Menu',
+        self::PERMISSION_MODULE_ROLE => 'Role',
+        self::PERMISSION_MODULE_USER => 'User',
     ];
 
     public static array $singlePermissions = [
