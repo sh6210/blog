@@ -41,7 +41,7 @@ class RoleSeeder extends Seeder
 
                 $custom = [
                     'role_id' => $role->id,
-                    'user_id' => User::whereEmail('admin@gmail.com')->first()->id,
+                    'user_id' => User::whereEmail('admin@email.com')->first()->id,
                 ];
 
                 DB::table('role_user')->insert($custom);
