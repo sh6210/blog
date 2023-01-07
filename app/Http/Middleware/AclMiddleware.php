@@ -17,7 +17,7 @@ class AclMiddleware
      * Handle an incoming request.
      *
      * @param Request $request
-     * @param Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
+     * @param Closure(Request): (Response|RedirectResponse)  $next
      *
      * @return Response|RedirectResponse
      */

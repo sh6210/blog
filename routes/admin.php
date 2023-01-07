@@ -44,6 +44,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth-admin', 'acl']], funct
         'role'     => RoleController::class,
         'user'     => UserController::class,
         'menu'     => MenuController::class,
-
     ]);
 });
