@@ -30,10 +30,6 @@ class GeneralController
     {
         return request()->user();
     }
-    public function home()
-    {
-//        return new HomeResource();
-    }
 
     public function slider(): AnonymousResourceCollection
     {
