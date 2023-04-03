@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Utility\ProjectConstants;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class AboutFactory extends Factory
 {
@@ -20,7 +21,7 @@ class AboutFactory extends Factory
             'page_title' => $this->faker->title,
             'summary' => $this->faker->sentence,
             'image' => $this->faker->url,
-            'content' => $this->faker->paragraph,
+            'content' => Str::limit($this->faker->paragraph, 250),
             'story_title' => $this->faker->title,
             'story_content' => $this->faker->paragraph,
             'education_title' => $this->faker->title,
